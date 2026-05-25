@@ -1,6 +1,8 @@
 package com.jcaa.usersmanagement.application.service.mapper;
 
 import com.jcaa.usersmanagement.application.service.dto.command.CreatePracticeCommand;
+import com.jcaa.usersmanagement.application.service.dto.command.DeletePracticeCommand;
+import com.jcaa.usersmanagement.application.service.dto.command.DeleteUserCommand;
 import com.jcaa.usersmanagement.application.service.dto.command.UpdatePracticeCommand;
 import com.jcaa.usersmanagement.domain.enums.DifficultyLevel;
 import com.jcaa.usersmanagement.domain.enums.PracticeType;
@@ -28,4 +30,8 @@ public class PracticeApplicationMapper {
                 PracticeType.fromString(command.practiceType())
         );
    }
+
+   public PracticeId fromDeleteCommandToPracticeId(DeletePracticeCommand command){
+        return new PracticeId(command.practiceId());
+    }
 }
