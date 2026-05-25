@@ -7,7 +7,7 @@ public class PracticeNotFoundException extends DomainException{
         super(message);
     }
 
-    public static PracticeNotFoundException becauseIdWasNotFound(final String userId) {
-        return new PracticeNotFoundException(String.format(MESSAGE_BY_ID, userId));
+    public static PracticeNotFoundException becauseIdWasNotFound(final String practiceId) {
+        return new PracticeNotFoundException(String.format(MESSAGE_BY_ID, practiceId));
     }
 }
