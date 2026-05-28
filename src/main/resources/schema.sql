@@ -31,3 +31,15 @@ VALUES (
     'ACTIVE'
 );
 
+
+-- Creacion de la tabla practicas
+CREATE TABLE IF NOT EXISTS practices (
+    practice_id      VARCHAR(36)   NOT NULL PRIMARY KEY,
+    title            VARCHAR(200)  NOT NULL,
+    difficulty_level ENUM('LOW', 'MEDIUM', 'HIGH') NOT NULL,
+    practice_type    ENUM('INDIVIDUAL', 'GROUP')   NOT NULL,
+    created_at       DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at       DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+

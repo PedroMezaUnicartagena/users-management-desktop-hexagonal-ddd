@@ -22,7 +22,8 @@ public class CreatePracticeService implements CreatePracticeUseCase {
 
     private final SavePracticePort savePracticePort;
     private final GetPracticeByIdPort getPracticeByIdPort;
-    Validator validator;
+
+    private final Validator validator;
 
     @Override
     public PracticeModel execute(CreatePracticeCommand command) {
