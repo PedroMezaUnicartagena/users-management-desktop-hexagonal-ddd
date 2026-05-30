@@ -14,6 +14,11 @@ public enum MenuOption {
   UPDATE_USER(4, "Update user"),
   DELETE_USER(5, "Delete user"),
   LOGIN(6, "Login"),
+  LIST_PRACTICES(7,  "List all practices"),
+  FIND_PRACTICE(8,   "Find practice by ID"),
+  CREATE_PRACTICE(9, "Create practice"),
+  UPDATE_PRACTICE(10, "Update practice"),
+  DELETE_PRACTICE(11, "Delete practice"),
   EXIT(0, "Exit");
 
   private final int number;
