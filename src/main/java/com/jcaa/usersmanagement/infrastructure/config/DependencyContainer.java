@@ -8,6 +8,7 @@ import com.jcaa.usersmanagement.infrastructure.adapter.persistence.config.Databa
 import com.jcaa.usersmanagement.infrastructure.adapter.persistence.config.DatabaseConnectionFactory;
 import com.jcaa.usersmanagement.infrastructure.adapter.persistence.repository.PracticeRepositoryMySQL;
 import com.jcaa.usersmanagement.infrastructure.adapter.persistence.repository.UserRepositoryMySQL;
+import com.jcaa.usersmanagement.infrastructure.entrypoint.desktop.controller.PracticeController;
 import com.jcaa.usersmanagement.infrastructure.entrypoint.desktop.controller.UserController;
 
 import java.sql.Connection;
@@ -29,6 +30,7 @@ public final class DependencyContainer {
   private static final String SMTP_FROM_NAME = "smtp.from.name";
 
   private final UserController userController;
+  private final PracticeController practiceController;
 
   public DependencyContainer() {
     final AppProperties properties = new AppProperties();
@@ -68,10 +70,24 @@ public final class DependencyContainer {
             getUserByIdUseCase,
             getAllUsersUseCase,
             loginUseCase);
+
+    this.practiceController= new PracticeController(
+            createPractice,
+            updatePractice,
+            deletePractice,
+            getPracticeById,
+            getAllPractices
+    );
   }
+
+
 
   public UserController userController() {
     return userController;
+  }
+
+  public PracticeController practiceController(){
+    return practiceController;
   }
 
   private static Connection buildDatabaseConnection(final AppProperties properties) {

@@ -20,7 +20,7 @@ public class GetPracticeByIdService implements GetPracticeByIdUseCase {
     private final Validator validator;
 
     @Override
-    public PracticeModel getById(GetPracticeByIdQuery query) {
+    public PracticeModel execute(GetPracticeByIdQuery query) {
         validateQuery(query);
 
         final PracticeId practiceId = PracticeApplicationMapper.fromGetPracticeByIdQueryToPracticeId(query);

@@ -27,10 +27,10 @@ public class PracticeRepositoryMySQL  implements
 
     private static final String SQL_INSERT =
             "INSERT INTO practices (practice_id, title, difficulty_level, practice_type, created_at, updated_at) " +
-                    "VALUES (?, ?, ?, ?, NOW(), NOW()";
+                    "VALUES (?, ?, ?, ?, NOW(), NOW())";
 
     private static final String SQL_UPDATE =
-            "UPDATE practices SET title = ?, difficulty_level = ?, practice_type = ?, updated_at= NOW()" +
+            "UPDATE practices SET title = ?, difficulty_level = ?, practice_type = ?, updated_at= NOW() " +
                     "WHERE practice_id = ?";
 
     private static final String SQL_SELECT_BY_ID =
@@ -39,7 +39,7 @@ public class PracticeRepositoryMySQL  implements
                     "WHERE practice_id = ? LIMIT 1";
 
     private static final String SQL_SELECT_ALL =
-            "SELECT practice_id, title, difficulty_level, practice_type , created_at, updated_at" +
+            "SELECT practice_id, title, difficulty_level, practice_type , created_at, updated_at " +
                     "FROM practices " +
                     "ORDER BY title ASC";
 
