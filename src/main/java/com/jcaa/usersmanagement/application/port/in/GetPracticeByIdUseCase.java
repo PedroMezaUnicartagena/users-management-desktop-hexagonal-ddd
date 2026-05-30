@@ -7,5 +7,5 @@ import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotNull;
 
 public interface GetPracticeByIdUseCase {
-    PracticeModel getById(@NotNull @Valid GetPracticeByIdQuery query);
+    PracticeModel execute(@NotNull @Valid GetPracticeByIdQuery query);
 }
